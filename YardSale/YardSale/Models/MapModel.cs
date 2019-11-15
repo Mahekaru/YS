@@ -19,7 +19,8 @@ namespace YardSale.Models
 
         public Location GetGeoCode()
         {
-
+            Location loc = new Location(0,0);
+            return loc;
         }
     }
 }
