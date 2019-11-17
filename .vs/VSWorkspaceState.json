@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\YardSale",
+    "\\YardSale\\YardSale",
+    "\\YardSale\\YardSale\\Controllers",
+    "\\YardSale\\YardSale\\Models",
+    "\\YardSale\\YardSale\\Views",
+    "\\YardSale\\YardSale\\Views\\Login"
   ],
+  "SelectedNode": "\\YardSale\\YardSale.sln",
   "PreviewInSolutionExplorer": false
 }

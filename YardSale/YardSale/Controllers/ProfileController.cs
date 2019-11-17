@@ -1,10 +1,12 @@
 ﻿using System.Web.Mvc;
 using YardSale.Models;
+using YardSale.Models.CRUD;
 
 namespace YardSale.Controllers
 {
     public class ProfileController : Controller
     {
+         
         // GET: Profile
         public ActionResult Index()
         {
@@ -17,11 +19,34 @@ namespace YardSale.Controllers
             return View();
         }
 
+        private YSDatabaseEntities db = new YSDatabaseEntities();
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProfileModel vm)
         {
-            return View();
+
+            User newUser = new User();
+            //newUser = db.Users.Find(vm.UserName);
+
+            if (newUser == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                newUser.UserName = vm.UserName;
+                newUser.Password = vm.Password;
+                newUser.Email = vm.Email;
+                newUser.Address = vm.Address;
+                newUser.City = vm.City;
+                newUser.State = vm.State;
+                newUser.Phone = vm.Phone;
+
+                db.Users.Add(newUser);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index","Login","");
         }
     }
 }
