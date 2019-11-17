@@ -24,7 +24,7 @@ namespace YardSale.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProfileModel vm)
         {
-
+            
             User newUser = new User();
             //newUser = db.Users.Find(vm.UserName);
 

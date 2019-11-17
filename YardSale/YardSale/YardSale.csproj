@@ -140,6 +140,7 @@
     <Compile Include="Models\CRUD\C__RefactorLog.cs">
       <DependentUpon>TestData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\DatabaseModel.cs" />
     <Compile Include="Models\CRUD\LoginModelsController.cs" />
     <Compile Include="Models\CRUD\TestData.Context.cs">
       <AutoGen>True</AutoGen>
@@ -264,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Database\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
