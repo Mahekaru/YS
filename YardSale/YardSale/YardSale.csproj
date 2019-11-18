@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -142,6 +145,7 @@
     </Compile>
     <Compile Include="Models\CRUD\DatabaseModel.cs" />
     <Compile Include="Models\CRUD\LoginModelsController.cs" />
+    <Compile Include="Models\CRUD\ProfileModelsController2.cs" />
     <Compile Include="Models\CRUD\TestData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +177,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Login\Login.css" />
+    <Content Include="Content\Profile\Create.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -262,6 +267,11 @@
     <Content Include="Views\LoginModels\Details.cshtml" />
     <Content Include="Views\LoginModels\Edit.cshtml" />
     <Content Include="Views\LoginModels\Index.cshtml" />
+    <Content Include="Views\ProfileModelsController2\Create.cshtml" />
+    <Content Include="Views\ProfileModelsController2\Delete.cshtml" />
+    <Content Include="Views\ProfileModelsController2\Details.cshtml" />
+    <Content Include="Views\ProfileModelsController2\Edit.cshtml" />
+    <Content Include="Views\ProfileModelsController2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

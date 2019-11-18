@@ -238,3 +238,6 @@ C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\EntityFramework.dll
 C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\EntityFramework.SqlServer.dll
 C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\EntityFramework.xml
 C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\EntityFramework.SqlServer.xml
+C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\AutoMapper.dll
+C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\AutoMapper.pdb
+C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\AutoMapper.xml

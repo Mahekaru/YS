@@ -10,13 +10,15 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nchar" MaxLength="100" Nullable="false" />
-    <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="Address" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="50" />
+    <Property Name="Address1" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address2" Type="nchar" MaxLength="100" />
     <Property Name="City" Type="nchar" MaxLength="100" Nullable="false" />
     <Property Name="State" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="Zipcode" Type="int" Nullable="false" />
     <Property Name="Phone" Type="int" />
   </EntityType>
   <EntityContainer Name="YSDatabaseModelStoreContainer">

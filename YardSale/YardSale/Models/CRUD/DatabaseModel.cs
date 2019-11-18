@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,29 +11,39 @@ namespace YardSale.Models.CRUD
     {
         private YSDatabaseEntities db = new YSDatabaseEntities();
 
-        public User GetUserFromProfile(ProfileModel vm)
+        public User GetUserFromProfile(ProfileModel Profile)
         {
             User newUser = new User();
-            newUser.UserName = vm.UserName;
-            newUser.Password = vm.Password;
-            newUser.Address = vm.Address;
-            newUser.City = vm.City;
-            newUser.State = vm.State;
-            newUser.Email = vm.Email;
+            //required fields
+            newUser.UserName = Profile.Username;
+            newUser.Password = Profile.Password;
+            newUser.Address1 = Profile.Address1;
+            newUser.Address2 = Profile.Address2;//This is also optional
+            newUser.City = Profile.City;
+            newUser.State = Profile.State;
+            newUser.Zipcode = Profile.Zipcode;
+            //Optional
+            newUser.Phone = Profile.Phone;
+            newUser.Email = Profile.Email;
 
             return newUser;
+        }
+        public bool CreateNewUser(ProfileModel Profile)
+        {
+            User NewUser = new User();
+            NewUser = GetUserFromProfile(Profile);
+            return CreateNewUser(NewUser);
         }
 
         public bool CreateNewUser(User NewUser)
         {
             bool created = false;
 
-            User newUser = new User();
-            if (newUser != null)
+            if (NewUser != null)
             {
                 if (db.Users.Any(u => u.UserName != NewUser.UserName))
                 {
-                    db.Users.Add(newUser);
+                    db.Users.Add(NewUser);
                     db.SaveChanges();
                 }
             }
