@@ -1,12 +1,7 @@
-﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using YardSale.Models;
+﻿using System.Linq;
 namespace YardSale.Models.CRUD
 {
-    
+
     public class DatabaseModel
     {
         private YSDatabaseEntities db = new YSDatabaseEntities();
@@ -15,7 +10,7 @@ namespace YardSale.Models.CRUD
         {
             User newUser = new User();
             //required fields
-            newUser.UserName = Profile.Username;
+            newUser.Username = Profile.Username;
             newUser.Password = Profile.Password;
             newUser.Address1 = Profile.Address1;
             newUser.Address2 = Profile.Address2;//This is also optional
@@ -41,8 +36,11 @@ namespace YardSale.Models.CRUD
 
             if (NewUser != null)
             {
-                if (db.Users.Any(u => u.UserName != NewUser.UserName))
+                //Checks to see if username already exists
+                //or if the database is empty
+                if (db.Users.Any(u => u.Username != NewUser.Username) || db.Users.Count() == 0)
                 {
+                    created = true;
                     db.Users.Add(NewUser);
                     db.SaveChanges();
                 }

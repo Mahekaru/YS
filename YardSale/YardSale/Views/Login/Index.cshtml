@@ -18,7 +18,7 @@
         <form class="form-signin text-center">
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
             <div id="username">
-                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @id = "inputUsername", @Required = "required", @Placeholder = "Username", @Type = "text", @class = "form-signin" } })
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @id = "inputUsername", @Required = "required", @Placeholder = "Username", @Type = "text", @class = "form-signin" } })
             </div>
             <div id="password">
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @id = "inputPassword", @Required = "required", @Placeholder = "Password", @Type = "password", @class = "form-signin" } })

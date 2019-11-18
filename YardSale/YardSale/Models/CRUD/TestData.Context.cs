@@ -25,9 +25,6 @@ namespace YardSale.Models.CRUD
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
-        public System.Data.Entity.DbSet<YardSale.Models.ProfileModel> ProfileModels { get; set; }
     }
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using YardSale.Models;
 using YardSale.Models.CRUD;
@@ -24,7 +21,7 @@ namespace YardSale.Controllers
         {
             List<User> t = new List<User>();
             User usr = new User();
-            usr.UserName = vm.UserName;
+            usr.Username = vm.Username;
             usr.Password = vm.Password;
 
             t = db.Users.ToList();
