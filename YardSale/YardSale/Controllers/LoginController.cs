@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using YardSale.Models;
 using YardSale.Models.CRUD;
 namespace YardSale.Controllers
 {
     public class LoginController : Controller
     {
+        DatabaseModel db = new DatabaseModel();
         // GET: Login
         public ActionResult Index()
         {
@@ -15,23 +14,22 @@ namespace YardSale.Controllers
             return View(vm);
         }
 
-        private YSDatabaseEntities db = new YSDatabaseEntities();
         [HttpPost]
         public ActionResult Login(LoginModel vm)
         {
-            List<User> t = new List<User>();
+           
             User usr = new User();
             usr.Username = vm.Username;
             usr.Password = vm.Password;
 
-            t = db.Users.ToList();
-            
-            if (!t.Contains(usr))
+            if (!db.Login(usr))
             {
                 vm.HasError = true;
                 vm.ErrorMessage = "Username or Password is Incorrect, Please Try Again";
                 return View("Index",vm);
             }
+
+            AuthorizationContext()
             return RedirectToAction("Index", "Map", "");
         }
     }

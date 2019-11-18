@@ -23,6 +23,17 @@ namespace YardSale.Models.CRUD
 
             return newUser;
         }
+
+        public bool Login(User UserLogin)
+        {
+            bool valid = false;
+
+            valid = db.Users.Where(u => u.Username == UserLogin.Username)
+                                .Where(u => u.Password ==UserLogin.Password).Any();
+
+            return valid;
+        }
+
         public bool CreateNewUser(ProfileModel Profile)
         {
             User NewUser = new User();
@@ -36,6 +47,7 @@ namespace YardSale.Models.CRUD
 
             if (NewUser != null)
             {
+                
                 //Checks to see if username already exists
                 //or if the database is empty
                 if (db.Users.Any(u => u.Username != NewUser.Username) || db.Users.Count() == 0)
