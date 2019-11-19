@@ -140,12 +140,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CRUD\C__RefactorLog.cs">
-      <DependentUpon>TestData.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\CRUD\DatabaseModel.cs" />
     <Compile Include="Models\CRUD\LoginModelsController.cs" />
-    <Compile Include="Models\CRUD\ProfileModelsController2.cs" />
     <Compile Include="Models\CRUD\TestData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

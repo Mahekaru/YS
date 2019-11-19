@@ -6,7 +6,13 @@
 
 <h2>Create Account</h2>
 <hr />
-<link href="~/Content/Profile/Create.css" rel="stylesheet">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link href="~/Content/Profile/Create.css" rel="stylesheet">
+</head>
 
 <body class="bg-light">
     <div class="container">
@@ -16,43 +22,35 @@
                 {
                     @Html.AntiForgeryToken()
 
-                    <div class="mb-3">
-                        <label for="username">Username</label>
-                        <div class="input-group">
-                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @id = "username", @placeholder = "Username" })
-                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="username">Username</label>
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @id = "username", @placeholder = "Username" })
+                                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @id = "password", @placeholder = "Password" })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="address1">Address</label>
+                                @Html.TextBoxFor(m => m.Address1, new { @class = "form-control", @type = "text", @id = "address1", @placeholder = "1234 Main St" })
+                                @Html.ValidationMessageFor(model => model.Address1, "", new { @class = "text-danger" })
+                            </div>
 
-                    <div class="mb-3">
-                        <label for="password">Password</label>
-                        <div class="input-group">
-                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @id = "password", @placeholder = "Password" })
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            <div class="mb-3">
+                                <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                                @Html.TextBoxFor(m => m.Address2, new { @class = "form-control", @type = "text", @id = "address2", @placeholder = "Apartment or suite" })
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @id = "email", @placeholder = "Email" })
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="address1">Address</label>
-                        @Html.TextBoxFor(m => m.Address1, new { @class = "form-control", @type = "text", @id = "address1", @placeholder = "1234 Main St" })
-                        @Html.ValidationMessageFor(model => model.Address1, "", new { @class = "text-danger" })
-                    </div>
-
-
-
-                    <div class="mb-3">
-                        <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                        @Html.TextBoxFor(m => m.Address2, new { @class = "form-control", @type = "text", @id = "address2", @placeholder = "Apartment or suite" })
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone">Phone Number<span class="text-muted">(Optional)</span></label>
-                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @type = "text", @id = "phone", @placeholder = "Phone" })
                     </div>
 
                     <div class="row">
@@ -72,6 +70,22 @@
                             @Html.ValidationMessageFor(model => model.Zipcode, "", new { @class = "text-danger" })
                         </div>
                     </div>
+
+                    <div class="row" >
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @id = "email", @placeholder = "Email" })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="phone">Phone Number<span class="text-muted">(Optional)</span></label>
+                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @type = "text", @id = "phone", @placeholder = "Phone" })
+                            </div>
+                        </div>
+                    </div>
+
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block" type="submit">Create Account</button>
                     <a class="btn btn-primary btn-lg btn-block" href="/login"> Back</a>

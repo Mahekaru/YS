@@ -1,4 +1,28 @@
-﻿.container {
+﻿@media only screen and (max-width: 960px) {
+    body {
+        background-color: yellow;
+    }
+    input{
+        max-width:100%
+    }
+
+}
+@media only screen and (max-width: 1030px) {
+    body{
+        background-color:blue;
+        text-align:center !important;
+    }
+    label{
+        float:left;
+    }
+    input {
+        max-width: 100%;
+    }
+}
+input{
+    max-width: 100%;
+}
+.container {
     max-width: 960px;
 }
 

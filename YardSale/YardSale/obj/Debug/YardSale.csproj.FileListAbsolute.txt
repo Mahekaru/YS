@@ -151,7 +151,6 @@ C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\bin\System.Web.WebPages.Dep
 C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\bin\System.Web.WebPages.Razor.xml
 C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\bin\Antlr3.Runtime.pdb
 C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\obj\Debug\YardSale.csprojAssemblyReference.cache
-C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\obj\Debug\YardSale.csproj.CoreCompileInputs.cache
 C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\obj\Debug\YardSale.csproj.CopyComplete
 C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\obj\Debug\YardSale.dll
 C:\Users\jenningsm\source\repos\YS\YardSale\YardSale\obj\Debug\YardSale.pdb
@@ -241,3 +240,11 @@ C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\EntityFramework.SqlServer.x
 C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\AutoMapper.dll
 C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\AutoMapper.pdb
 C:\Users\mahek\source\repos\YS\YardSale\YardSale\bin\AutoMapper.xml
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\AutoMapper.dll
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\EntityFramework.dll
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\EntityFramework.SqlServer.dll
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\GoogleMapsApi.dll
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\AutoMapper.pdb
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\AutoMapper.xml
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\EntityFramework.xml
+C:\Users\jenningsm\Source\Repos\YS\YardSale\YardSale\bin\EntityFramework.SqlServer.xml
