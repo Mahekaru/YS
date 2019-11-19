@@ -24,13 +24,32 @@ namespace YardSale.Models.CRUD
             return newUser;
         }
 
+        public ProfileModel GetProfileFromUser(User UserLogin)
+        {
+            ProfileModel Profile = new ProfileModel();
+            User User = db.Users.Where(u => u.Username == UserLogin.Username).FirstOrDefault();
+ 
+            Profile.Id = User.Id;
+            Profile.Username = User.Username.Trim();
+            Profile.Address1 = User.Address1.Trim();
+            Profile.Address2 ??= User.Address2 ?? "";
+            Profile.Address2.Trim();
+            Profile.City = User.City.Trim();
+            Profile.State = User.State.Trim();
+            Profile.Zipcode = User.Zipcode;
+            Profile.Phone = User.Phone;
+            Profile.Email = User.Email.Trim();
+            
+            return Profile;
+        }
+
         public bool Login(User UserLogin)
         {
             bool valid = false;
 
             valid = db.Users.Where(u => u.Username == UserLogin.Username)
                                 .Where(u => u.Password ==UserLogin.Password).Any();
-
+            
             return valid;
         }
 

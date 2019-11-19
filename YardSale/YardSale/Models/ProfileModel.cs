@@ -27,5 +27,8 @@ namespace YardSale.Models
 
         [Required(ErrorMessage = "Zip is required")]
         public int Zipcode { get; set; }
+
+        public MapModel Map = new MapModel();
+
     }
 }

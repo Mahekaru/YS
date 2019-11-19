@@ -1,13 +1,12 @@
 ﻿using System.Net;
 using System.Web.Mvc;
 using YardSale.Models;
-using YardSale.Models.CRUD;
 
 namespace YardSale.Controllers
 {
-    public class ProfileController : Controller
+    public class ProfileController : BaseController
     {
-        DatabaseModel db = new DatabaseModel();
+ 
         // GET: Profile
         public ActionResult Index()
         {

@@ -1,18 +1,19 @@
 ﻿using System.Web.Mvc;
-using YardSale.Models;
+using YardSale.Models.CRUD;
+
 namespace YardSale.Controllers
 {
-    public class MapController : Controller
+    public class MapController : BaseController
     {
-        // GET: Map
-        [Authorize]
-        public ActionResult Index()
-        {
-            MapModel vm = new MapModel();
-            vm.Latitude = 0;
-            vm.Longitude = 0;
 
-            return View(vm);
+        public ActionResult Index(User Usr)
+        {
+            GetProfile();
+            profile.Map.Address = string.Format("{0} {1} {2} {3} {4}", profile.Address1 , profile.Address2 , profile.City , profile.State , profile.Zipcode);
+            profile.Map.Longitude = 0;
+            profile.Map.Latitude = 0;
+
+            return View(profile);
         }
     }
 }
