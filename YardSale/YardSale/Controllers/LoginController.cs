@@ -3,9 +3,9 @@ using YardSale.Models;
 using YardSale.Models.CRUD;
 namespace YardSale.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
-        DatabaseModel db = new DatabaseModel();
+       
         // GET: Login
         public ActionResult Index()
         {
@@ -19,9 +19,10 @@ namespace YardSale.Controllers
         {
            
             User usr = new User();
+            
             usr.Username = vm.Username;
             usr.Password = vm.Password;
-
+            
             if (!db.Login(usr))
             {
                 vm.HasError = true;
@@ -29,8 +30,13 @@ namespace YardSale.Controllers
                 return View("Index",vm);
             }
 
-            AuthorizationContext()
-            return RedirectToAction("Index", "Map", "");
+            
+            profile = db.GetProfileFromUser(usr);
+            profile.Username = usr.Username;
+
+            SetProfile(profile);
+
+            return RedirectToAction("Index", "Map", usr);// View("Map","Map",usr);
         }
     }
 }
