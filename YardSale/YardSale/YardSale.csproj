@@ -143,6 +143,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\CRUD\DatabaseModel.cs" />
     <Compile Include="Models\CRUD\LoginModelsController.cs" />
     <Compile Include="Models\CRUD\TestData.Context.cs">

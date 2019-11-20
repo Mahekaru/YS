@@ -36,7 +36,7 @@ namespace YardSale.Controllers
 
             SetProfile(profile);
 
-            return RedirectToAction("Index", "Map", usr);// View("Map","Map",usr);
+            return RedirectToAction("Index", "Map");// View("Map","Map",usr);
         }
     }
 }
