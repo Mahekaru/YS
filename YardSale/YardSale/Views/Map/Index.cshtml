@@ -1,41 +1,138 @@
 ﻿@model YardSale.Models.MapModel
 
+
 @{
-    ViewBag.Title = "Index";
+    //Layout = null;
+    ViewBag.Title = "Map";
 }
 
-<h2>Index</h2>
-<script>
-    function myMap() {
-        var mapProp = {
-            center: new google.maps.LatLng(@Model.Latitude,@Model.Longitude),
-            zoom: 5,
-        };
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var marker = new google.maps.Marker({ position: mapProp.center });
-        marker.setMap(map);
-    }
-</script>
+<header>
 
+    <script>
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(@Model.Latitude,@Model.Longitude),
+                zoom: 5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({ position: mapProp.center });
+            marker.setMap(map);
+        }
 
-@using (Html.BeginForm("Search", "Map", FormMethod.Post))
-{
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-12">
-                    @Html.TextBoxFor(m => m.Address)
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <button type="submit">Submit</button>
-                </div>
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="~/Content/Map/MapStyle.css" rel="stylesheet" />
+</header>
+
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+        <div class="media d-flex align-items-center">
+            <img src="~/Images/Unknown.jpg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+            <div class="media-body">
+                <h4 class="m-0">Unknown</h4>
+                <p class="font-weight-light text-muted mb-0">Unknown</p>
             </div>
         </div>
     </div>
-}
 
-<div id="googleMap" style="width:100%;height:400px;"></div>
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic bg-light">
+                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                About
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                Services
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                Gallery
+            </a>
+        </li>
+    </ul>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                Area charts
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                Bar charts
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+                Pie charts
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-dark font-italic">
+                <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+                Line charts
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- End vertical navbar -->
+
+
+    <!-- Page content holder -->
+<div class="page-content p-1" id="content">
+    <!-- Toggle button -->
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+
+    <div class="row text-white">
+        <div class="col-lg-12">
+            <div id="googleMap" style="width:100%;height:100%;background-color:red;"></div>
+        </div>
+    </div>
+
+</div>
+<footer class="footer mt-auto py-3">
+    @using (Html.BeginForm("Search", "Map", FormMethod.Post, new { @Class = "search" }))
+    {
+        <div class="col-lg-12">
+            <div class="lead">
+                <p>Search</p>
+            </div>
+        </div>
+        @Html.TextBoxFor(m => m.Address, new { @Class = "address" })
+        <button class="btn btn-primary" type="submit" style="width:100%">Submit</button>
+    }
+</footer>
+
+
+
+<script type="text/javascript">
+    $(function () {
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+        });
+    });
+    
+</script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=@Model.GetAPIKey()&callback=myMap"></script>
 
