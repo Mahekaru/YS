@@ -1,13 +1,9 @@
-﻿using System.Web.Mvc;
-using YardSale.Models.CRUD;
-using YardSale.Models;
-using GoogleMapsApi;
-using GoogleMapsApi.Entities.Geocoding;
-using GoogleMapsApi.Engine;
+﻿using GoogleMapsApi;
 using GoogleMapsApi.Entities.Common;
 using GoogleMapsApi.Entities.Geocoding.Request;
-using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
+using YardSale.Models;
 namespace YardSale.Controllers
 {
     public class MapController : BaseController
@@ -18,8 +14,8 @@ namespace YardSale.Controllers
             MapModel map = new MapModel();
 
             profile = (ProfileModel)Session["Profile"];
-
-            map.Address = string.Format("{0} {1} {2} {3} {4}", profile.Address1 , profile.Address2 , profile.City , profile.State , profile.Zipcode);
+            map.Address = "";
+            //map.Address = string.Format("{0} {1} {2} {3} {4}", profile.Address1 , profile.Address2 , profile.City , profile.State , profile.Zipcode);
             map.Longitude = 0;
             map.Latitude = 0;
 
