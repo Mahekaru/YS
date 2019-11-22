@@ -6,6 +6,8 @@
 *
 */
 
+
+
 .vertical-nav {
     min-width: 17rem;
     width: 17rem;
@@ -34,6 +36,24 @@
     margin: 0;
 }
 
+.address {
+    max-width: none;
+    width: 100%;
+}
+body{
+    height:100%;
+    margin:0;
+}
+
+.full-height {
+    height: 100%;
+    display:inline-block;
+    margin: 0;
+}
+.search {
+    max-width: none;
+    width: 100%;
+}
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -17rem;
@@ -54,6 +74,8 @@
         }
 }
 
+
+
 /*
 *
 * ==========================================
@@ -70,14 +92,11 @@ body {
     overflow-x: hidden;
 }
 
-.separator {
-    margin: 3rem 0;
-    border-bottom: 1px dashed #fff;
-}
-
 .text-uppercase {
     letter-spacing: 0.1em;
 }
+
+
 
 .text-gray {
     color: #aaa;

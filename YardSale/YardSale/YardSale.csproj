@@ -182,6 +182,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Unknown.jpg" />
     <Content Include="Models\CRUD\TestData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TestData.edmx</DependentUpon>
