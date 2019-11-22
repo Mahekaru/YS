@@ -1,6 +1,13 @@
 ﻿using System.Web.Mvc;
 using YardSale.Models.CRUD;
 using YardSale.Models;
+using GoogleMapsApi;
+using GoogleMapsApi.Entities.Geocoding;
+using GoogleMapsApi.Engine;
+using GoogleMapsApi.Entities.Common;
+using GoogleMapsApi.Entities.Geocoding.Request;
+using System.Collections.Generic;
+using System.Linq;
 namespace YardSale.Controllers
 {
     public class MapController : BaseController
@@ -22,9 +29,20 @@ namespace YardSale.Controllers
         [HttpPost]
         public ActionResult Search(MapModel vm)
         {
+            GeocodingRequest GeoRequest = new GeocodingRequest();
+            Location GeoCode;
+
             profile = (ProfileModel)Session["Profile"];
             profile.Map = vm;
-            
+
+            GeoRequest.ApiKey = "";
+            GeoRequest.Address = vm.Address;
+
+            GeoCode = GoogleMaps.Geocode.QueryAsync(GeoRequest).Result.Results.Select(x => x.Geometry.Location).FirstOrDefault();
+
+            vm.Latitude = GeoCode.Latitude;
+            vm.Longitude = GeoCode.Longitude;
+
             return View("Index",vm);
         }
     }

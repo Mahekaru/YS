@@ -36,6 +36,6 @@
     </div>
 }
 
-<div id="googleMap" style="width:100%;height:400px; background-color:red"></div>
-<script src="@Model.GetAPIKey()"></script>
+<div id="googleMap" style="width:100%;height:400px;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=@Model.GetAPIKey()&callback=myMap"></script>
 
