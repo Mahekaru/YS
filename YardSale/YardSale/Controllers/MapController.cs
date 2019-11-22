@@ -1,19 +1,49 @@
 ﻿using System.Web.Mvc;
 using YardSale.Models.CRUD;
-
+using YardSale.Models;
+using GoogleMapsApi;
+using GoogleMapsApi.Entities.Geocoding;
+using GoogleMapsApi.Engine;
+using GoogleMapsApi.Entities.Common;
+using GoogleMapsApi.Entities.Geocoding.Request;
+using System.Collections.Generic;
+using System.Linq;
 namespace YardSale.Controllers
 {
     public class MapController : BaseController
     {
 
-        public ActionResult Index(User Usr)
+        public ActionResult Index()
         {
-            GetProfile();
-            profile.Map.Address = string.Format("{0} {1} {2} {3} {4}", profile.Address1 , profile.Address2 , profile.City , profile.State , profile.Zipcode);
-            profile.Map.Longitude = 0;
-            profile.Map.Latitude = 0;
+            MapModel map = new MapModel();
 
-            return View(profile);
+            profile = (ProfileModel)Session["Profile"];
+
+            map.Address = string.Format("{0} {1} {2} {3} {4}", profile.Address1 , profile.Address2 , profile.City , profile.State , profile.Zipcode);
+            map.Longitude = 0;
+            map.Latitude = 0;
+
+            return View(map);
+        }
+
+        [HttpPost]
+        public ActionResult Search(MapModel vm)
+        {
+            GeocodingRequest GeoRequest = new GeocodingRequest();
+            Location GeoCode;
+
+            profile = (ProfileModel)Session["Profile"];
+            profile.Map = vm;
+
+            GeoRequest.ApiKey = "";
+            GeoRequest.Address = vm.Address;
+
+            GeoCode = GoogleMaps.Geocode.QueryAsync(GeoRequest).Result.Results.Select(x => x.Geometry.Location).FirstOrDefault();
+
+            vm.Latitude = GeoCode.Latitude;
+            vm.Longitude = GeoCode.Longitude;
+
+            return View("Index",vm);
         }
     }
 }

@@ -27,6 +27,12 @@ namespace YardSale.Models.CRUD
         public ProfileModel GetProfileFromUser(User UserLogin)
         {
             ProfileModel Profile = new ProfileModel();
+            Profile.Address1 = "182 test";
+            Profile.Address2 = "";
+            Profile.City = "Indianapolis";
+            Profile.State = "IN";
+            Profile.Username = "Mahekaru";
+            Profile.Zipcode = 46229;
             User User = db.Users.Where(u => u.Username == UserLogin.Username).FirstOrDefault();
  
             Profile.Id = User.Id;
@@ -39,6 +45,7 @@ namespace YardSale.Models.CRUD
             Profile.Zipcode = User.Zipcode;
             Profile.Phone = User.Phone;
             Profile.Email = User.Email.Trim();
+            
             
             return Profile;
         }

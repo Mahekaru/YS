@@ -6,17 +6,11 @@ namespace YardSale.Controllers
     public class BaseController : Controller
     {
         public DatabaseModel db = new DatabaseModel();
-        public ProfileModel profile;
+        public ProfileModel profile = new ProfileModel();
 
         public void SetProfile(ProfileModel Profile)
         {
             Session["Profile"] = Profile;
-        }
-
-        public void GetProfile()
-        {
-            profile = (ProfileModel)Session["Profile"];
-            Session.Timeout = 60;
         }
     }
 }
