@@ -46,7 +46,7 @@ namespace YardSale.Models.CRUD
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Password")] User loginModel)
+        public ActionResult Create([Bind(Include = "Id,Username,Password")] User loginModel)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace YardSale.Models.CRUD
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,UserName,Password")] LoginModel loginModel)
+        public ActionResult Edit([Bind(Include = "Id,Username,Password")] LoginModel loginModel)
         {
             if (ModelState.IsValid)
             {

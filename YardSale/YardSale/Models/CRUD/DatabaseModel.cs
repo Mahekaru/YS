@@ -33,18 +33,18 @@ namespace YardSale.Models.CRUD
             Profile.State = "IN";
             Profile.Username = "Mahekaru";
             Profile.Zipcode = 46229;
-            User User = db.Users.Where(u => u.Username == UserLogin.Username).FirstOrDefault();
+            User user = db.Users.Where(u => u.Username == UserLogin.Username).FirstOrDefault();
  
-            Profile.Id = User.Id;
-            Profile.Username = User.Username.Trim();
-            Profile.Address1 = User.Address1.Trim();
-            Profile.Address2 ??= User.Address2 ?? "";
+            Profile.Id = user.Id;
+            Profile.Username = user.Username.Trim();
+            Profile.Address1 = user.Address1.Trim();
+            Profile.Address2 ??= user.Address2 ?? "";
             Profile.Address2.Trim();
-            Profile.City = User.City.Trim();
-            Profile.State = User.State.Trim();
-            Profile.Zipcode = User.Zipcode;
-            Profile.Phone = User.Phone;
-            Profile.Email = User.Email.Trim();
+            Profile.City = user.City.Trim();
+            Profile.State = user.State.Trim();
+            Profile.Zipcode = user.Zipcode;
+            Profile.Phone = user.Phone;
+            Profile.Email = user.Email.Trim();
             
             
             return Profile;
@@ -85,6 +85,17 @@ namespace YardSale.Models.CRUD
             }
             return created;
         }
+
+        public string GetGoogleMapApiKey()
+        {
+            return db.Keys.Where(k=>k.Id == 1).Select(k=>k.APIKey).FirstOrDefault();
+        }
+        public string GetGeocodingKey()
+        {
+          return  db.Keys.Select(k => k.Id == 2).ToString();
+        }
+
+
     }
 
     

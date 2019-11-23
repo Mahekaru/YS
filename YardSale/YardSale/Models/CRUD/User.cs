@@ -15,14 +15,14 @@ namespace YardSale.Models.CRUD
     public partial class User
     {
         public int Id { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public Nullable<int> Phone { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
         public int Zipcode { get; set; }
-        public string Username { get; set; }
+        public Nullable<int> Phone { get; set; }
     }
 }

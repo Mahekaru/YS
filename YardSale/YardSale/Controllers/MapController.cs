@@ -31,7 +31,7 @@ namespace YardSale.Controllers
             profile = (ProfileModel)Session["Profile"];
             profile.Map = vm;
 
-            GeoRequest.ApiKey = "";
+            GeoRequest.ApiKey = db.GetGeocodingKey(); ;
             GeoRequest.Address = vm.Address;
 
             GeoCode = GoogleMaps.Geocode.QueryAsync(GeoRequest).Result.Results.Select(x => x.Geometry.Location).FirstOrDefault();

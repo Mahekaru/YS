@@ -1,4 +1,4 @@
-﻿
+﻿using YardSale.Models.CRUD;
 using GoogleMapsApi.Entities.Common;
 
 namespace YardSale.Models
@@ -12,9 +12,18 @@ namespace YardSale.Models
         public Location GeoCode { get; set; }
         public string Key { get; set; }
 
-        public string GetAPIKey()
+        public string GetMapKey()
         {
             return "";
+            //DatabaseModel db = new DatabaseModel();
+            //return db.GetGoogleMapApiKey();
+        }
+
+        public string GetGeoCodeKey()
+        {
+            return "";
+            //DatabaseModel db = new DatabaseModel();
+            //return db.GetGeocodingKey();
         }
 
         public Location GetGeoCode()

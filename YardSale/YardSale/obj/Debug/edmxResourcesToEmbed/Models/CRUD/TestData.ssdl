@@ -1,21 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="YSDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Keys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nchar" MaxLength="100" />
+    <Property Name="Key" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Username" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nchar" MaxLength="100" Nullable="false" />
-    <Property Name="Email" Type="nchar" MaxLength="100" />
-    <Property Name="City" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="State" Type="nchar" MaxLength="2" Nullable="false" />
-    <Property Name="Phone" Type="int" />
+    <Property Name="Email" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="Address1" Type="nchar" MaxLength="100" Nullable="false" />
     <Property Name="Address2" Type="nchar" MaxLength="100" />
+    <Property Name="City" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="State" Type="nchar" MaxLength="2" Nullable="false" />
     <Property Name="Zipcode" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="int" />
   </EntityType>
   <EntityContainer Name="YSDatabaseModelStoreContainer">
+    <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Keys" EntityType="Self.Keys" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>
