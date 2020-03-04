@@ -100,7 +100,6 @@
 
         </div>
         <div class="col-sm-10">
-
             <div class="row text-white">
                 <div class="col-lg-12">
                     <div id="googleMap" style="width:100%;height:100%"></div>
@@ -108,30 +107,27 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="" id="content">
-                <!-- Toggle button -->
-                <button id="sidebarCollapse" type="button" class="btn btn-light bg-white shadow-sm px-4 mb-4">
-                    @*<i class="fa fa-bars mr-2"></i>*@
-                    <small class="text-uppercase font-weight-bold">></small>
-                </button>
-                <footer class="footer mt-auto py-3">
-                    <div class="row">
-                        @using (Html.BeginForm("Search", "Map", FormMethod.Post, new { @Class = "search" }))
-                        {
-                            @Html.TextBoxFor(m => m.Address, new { @Class = "address", @Placeholder = "Search" })
-                            <button class="btn btn-primary" type="submit" style="width:100%">Submit</button>
-                        }
-                    </div>
-                </footer>
-            </div>
-        </div>
 
-
-    </div>
 </div>
 
+<div class="navbar navbar-expand-md navbar-light bg-light fixed-bottom">
+    <a href="#home" class="active">Logo</a>
+    <div>
+        @using (Html.BeginForm("Search", "Map", FormMethod.Post, new { @Class = "search" }))
+        {
+            @Html.TextBoxFor(m => m.Address, new { @Class = "address ml-1 mt-1", @Placeholder = "Search" })
+            <button class="btn btn-primary" type="submit">Submit</button>
+        }
+    </div>
+    <div id="sidebarCollapse5" class="navbar-light">
+        <button id="sidebarCollapse" class="navbar-toggler bg-light" type="button">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+    @*<a href="javascript:void(0);">
+        <i class="fa fa-bars"></i>
+    </a>*@
+</div>
 
 <!-- Page content holder -->
 

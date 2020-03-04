@@ -14,16 +14,16 @@ namespace YardSale.Models
 
         public string GetMapKey()
         {
+            //return "";
+            YSDatabaseEntities1 db = new YSDatabaseEntities1();
             return "";
-            //DatabaseModel db = new DatabaseModel();
-            //return db.GetGoogleMapApiKey();
         }
 
         public string GetGeoCodeKey()
         {
+            //return "";
+            YSDatabaseEntities1 db = new YSDatabaseEntities1();
             return "";
-            //DatabaseModel db = new DatabaseModel();
-            //return db.GetGeocodingKey();
         }
 
         public Location GetGeoCode()

@@ -144,31 +144,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CRUD\C__RefactorLog.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CRUD\DatabaseModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CRUD\DatabaseModel.cs" />
-    <Compile Include="Models\CRUD\DatabaseModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CRUD\DatabaseModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\CRUD\Key.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>YSDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CRUD\LoginModelsController.cs" />
     <Compile Include="Models\CRUD\User.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
+      <DependentUpon>YSDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CRUD\YSDatabaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YSDatabaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CRUD\YSDatabaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YSDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CRUD\YSDatabaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YSDatabaseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MapModel.cs" />
@@ -189,15 +185,15 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Unknown.jpg" />
-    <Content Include="Models\CRUD\DatabaseModel.Context.tt">
+    <Content Include="Models\CRUD\YSDatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-      <LastGenOutput>DatabaseModel.Context.cs</LastGenOutput>
+      <DependentUpon>YSDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>YSDatabaseModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CRUD\DatabaseModel.tt">
+    <Content Include="Models\CRUD\YSDatabaseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-      <LastGenOutput>DatabaseModel1.cs</LastGenOutput>
+      <DependentUpon>YSDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>YSDatabaseModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -221,12 +217,12 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <EntityDeploy Include="Models\CRUD\DatabaseModel.edmx">
+    <EntityDeploy Include="Models\CRUD\YSDatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>YSDatabaseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CRUD\DatabaseModel.edmx.diagram">
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+    <Content Include="Models\CRUD\YSDatabaseModel.edmx.diagram">
+      <DependentUpon>YSDatabaseModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

@@ -22,6 +22,7 @@ namespace YardSale.Models.CRUD
         public string Address2 { get; set; }
         public string City { get; set; }
         public string State { get; set; }
+        public string Country { get; set; }
         public int Zipcode { get; set; }
         public Nullable<int> Phone { get; set; }
     }

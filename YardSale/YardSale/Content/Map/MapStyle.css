@@ -11,13 +11,41 @@
 .vertical-nav {
     min-width: 17rem;
     width: 17rem;
-    height: 100vh;
+    height: 100%;
 
     top: 0;
     left: 0;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.4s;
 }
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+.topnav a {
+    float: left;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a.icon {
+    float: right;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 
 .page-content {
     width: calc(100% - 20rem);
@@ -36,10 +64,10 @@
     margin: 0;
 }
 
-.address {
+/*.address {
     max-width: none;
     width: 100%;
-}
+}*/
 body{
     height:100%;
     margin:0;

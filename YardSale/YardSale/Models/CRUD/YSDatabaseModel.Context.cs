@@ -13,10 +13,10 @@ namespace YardSale.Models.CRUD
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class YSDatabaseEntities : DbContext
+    public partial class YSDatabaseEntities1 : DbContext
     {
-        public YSDatabaseEntities()
-            : base("name=YSDatabaseEntities")
+        public YSDatabaseEntities1()
+            : base("name=YSDatabaseEntities1")
         {
         }
     
@@ -25,7 +25,6 @@ namespace YardSale.Models.CRUD
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
         public virtual DbSet<Key> Keys { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

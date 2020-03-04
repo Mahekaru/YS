@@ -12,7 +12,7 @@ namespace YardSale.Models.CRUD
 {
     public class LoginModelsController : Controller
     {
-        private YSDatabaseEntities db = new YSDatabaseEntities();
+        private YSDatabaseEntities1 db = new YSDatabaseEntities1();
 
         // GET: LoginModels
         public ActionResult Index()

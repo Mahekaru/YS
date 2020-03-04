@@ -5,7 +5,7 @@ namespace YardSale.Controllers
 {
     public class BaseController : Controller
     {
-        public DatabaseModel db = new DatabaseModel();
+        public YSDatabaseEntities1 db = new YSDatabaseEntities1();
         public ProfileModel profile = new ProfileModel();
 
         public void SetProfile(ProfileModel Profile)
